@@ -1,0 +1,62 @@
+README
+------
+
+This repository contains the documentation about E-Maj.
+
+
+1- About E-Maj
+
+E-Maj is a PostgreSQL extension.
+The main goals of E-Maj are:
+- log updates performed on one or several sets of tables.
+- cancel these updates if needed, and reset a tables set to a predefined stable state.
+
+E-Maj repository can be found on github (https://github.com/beaud76/emaj) 
+
+
+
+2- License
+
+E-Maj and its documentation are distributed under the GNU General Public License.
+
+
+
+3- Supplied files 
+
+- README                   this readme file
+- Emaj_doc_en.odt          E-Maj user's guide in English
+- Emaj_doc_fr.odt          E-Maj user's guide in French
+- Emaj_pres_en.odp         E-Maj presentation in English
+- Emaj_pres_fr.odp         E-Maj presentation in French
+
+The presentation offers a quick overview of the extension. It may be used to easily discover 
+what is E-Maj. You may also use it as presentation support to present the extension to some 
+other people.
+
+The user's guide is the reference documentation that explains what is E-Maj, how to install 
+it and how to use it.
+
+
+
+4- How to improve the documentation
+
+The source files are built with Open Office or Libre Office softwares:
+- the user's guides are produced by WRITER,
+- the presentations are produced by IMPRESS.
+
+Only a pdf version of these documents is supplied with each official E-Maj distribution.
+
+Any improvement on these files is welcome and can be sent to the maintainer (see below).
+
+If you wish to suggest improvements of the user's guide, be sure to record changes when 
+using WRITER so that these changes can be easily located.
+
+
+
+5- Support
+
+For additional support or bug report, please contact Philippe BEAUDOIN 
+(phb <dot> emaj <at> free <dot> fr).
+
+Any feedback is welcome, even to just notice you use E-Maj.
+ 
