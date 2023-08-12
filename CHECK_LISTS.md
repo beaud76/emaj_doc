@@ -52,7 +52,7 @@ Setup a new **Postgres major or minor version**
 	- tar -xzf postgresql-x.y.z.tar.gz or tar -xjf postgresql-x.y.z.tar.bz2
 	- cd postgresql-x.y.z
 - compile
-	- ./configure --prefix=/usr/local/pgxyz
+	- ./configure --with-libxml --prefix=/usr/local/pgxyz
 	- make
 	- make check
 	- cd contrib
