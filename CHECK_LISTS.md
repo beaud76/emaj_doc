@@ -36,6 +36,7 @@ Here are some check lists I use to develop and maintain E-Maj.
 - specify the change
 - code the change into the test environment (/var/www/html/emaj_web)
 - test the change with the web interface
+- check the language files consistency: ./tools/checkLang.pl
 - synchronize the emaj_web repo : ~/proj/divers/tools/syncEmajWeb.sh
 - commit the change
 	- cd emajweb repo root directory (~/proj/emaj_web)
@@ -143,6 +144,7 @@ Create a new **E-Maj version**
 		- ~/proj/divers/tools/syncEmajWeb.sh
 		- git sur ~/proj/emaj_web
 			- git commit -a -m 'Setup the new x.y.z version'
+			- git gc
 			- git tag -a vx.y.z -m 'Version x.y.z.'
 - synchronize the 3 emaj, emaj_doc and emaj_web github repo
 	- git push
