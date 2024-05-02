@@ -96,8 +96,7 @@ Create a new **E-Maj version**
 		- refresh the Emaj_web screenshots
 - Update the slides, if needed
 	- .odp files in French and English
-- Adjust the emaj/tar.index file
-- git commit -am 'Tag the documentation and adjust the tar.index file to prepare the new coming version.'
+- git commit -am 'Tag the documentation to prepare the new coming version.'
 - test all distributed scripts
 	- createdb -p 5414 -h localhost -U postgres testemaj
 	- psql ... postgres
