@@ -10,9 +10,9 @@ Here are some check lists I use to develop and maintain E-Maj.
 	- functions
 	- other components
 - test the change
-	- adjust test scenari, if needed
+	- adjust test scenarios, if needed
 	- tools/regress, with options t + m + p
-	- tools/copytoexpected.sh when test result files can be considered as reference
+	- tools/copy2Expected.sh when test result files can be considered as reference
 - emaj upgrade procedure
 	- data structures
 	- functions : tools/sync_fct_in_upgrade_script.pl
@@ -87,15 +87,18 @@ Setup a new **Postgres major or minor version**
 Create a new **E-Maj version**
 --------------------------
 
-- Update the documentations MàJ doc pour upgrade 
-	- odt and rst files in French and in English
+- Update the documentations
+	- odt and rst files, in French and in English
 		- odt: version number (page 1 and footer)
 		- rst: version number in conf.py
-		- files list in §8.2
 		- add comment about the upgrade procedure, if needed
-		- refresh the Emaj_web screenshots
-- Update the slides, if needed
-	- .odp files in French and English
+		- refresh the Emaj_web screenshots, if needed
+		- add the sql upgrade script file in the content list (§8.2 and content.rst)
+		- refresh the versions compatibility matrix, if needed (§8.3 and versionsMatrix.rst)
+- Update the slides
+	- .odp files, in French and English
+		- version number in the slide templates
+		- other adjustments, if needed
 - git commit -am 'Tag the documentation to prepare the new coming version.'
 - test all distributed scripts
 	- createdb -p 5414 -h localhost -U postgres testemaj
@@ -120,12 +123,16 @@ Create a new **E-Maj version**
 	- sh emaj/tools/create_version_prepare.sh 'x.y.z' '<version date in yyyy-mmm-dd format>'
 	- cd emaj
 		- check the environment
+			- some files are now tagged with the new version id
+			- their original devel version are saved in .bak files. They will be renamed by the create_version_complete.sh script
 		- git commit -a -m 'Setup the new x.y.z version.'
 		- git tag -a v<x.y.z> -m 'Version x.y.z.'
 	- cd ..
+	- close all opened .odt or .odp LibreOffice files
 	- sh emaj/tools/create_version_complete.sh 'x.y.z'
 	- cd emaj-x.y.z
-		- tools/regress.sh : for all functions, then tools/copy2expected.sh
+		- tools/regress.sh : for all functions
+		- tools/copy2expected.sh
 		- git commit -a -m 'In emaj-x.y.z version, adjust the content and prepare the environment for potential development.'
 	- cd ..
 - prepare the new devel environment
@@ -139,7 +146,9 @@ Create a new **E-Maj version**
 	- cd ../emaj_doc
 		- git commit -a -m 'Setup the new x.y.z version'
 	- cd ../emaj_web
-		- modify the version number at the beginning of the libraries/versions.inc.php file in proj/www_emajweb
+		- modify libraries/versions.inc.php file in proj/www_emajweb
+			- modify the version number at the beginning of the file
+			- modify the postgres vs Emaj_web versions compatibility matrix
 		- ~/proj/divers/tools/syncEmajWeb.sh
 		- git sur ~/proj/emaj_web
 			- git commit -a -m 'Setup the new x.y.z version'
