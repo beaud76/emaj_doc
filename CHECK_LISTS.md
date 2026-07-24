@@ -20,7 +20,6 @@ Here are some check lists I use to develop and maintain E-Maj.
 - check error messages coverity : tools/check_error_messages.pl
 - update the CHANGES.md file
 - update the documentation
-	- odt files, in French and English
 	- rst files in docs/fr and docs/en + make html + check local output results
 - commit the change
 	- git status + git diff
@@ -88,9 +87,8 @@ Create a new **E-Maj version**
 --------------------------
 
 - Update the documentations
-	- odt and rst files, in French and in English
-		- odt: version number (page 1 and footer)
-		- rst: version number in conf.py
+	- rst files, in French (docs/fr) and in English (docs/en)
+		- version number in conf.py
 		- add comment about the upgrade procedure, if needed
 		- refresh the Emaj_web screenshots, if needed
 		- add the sql upgrade script file in the content list (§8.2 and content.rst)
@@ -128,7 +126,7 @@ Create a new **E-Maj version**
 		- git commit -a -m 'Setup the new x.y.z version.'
 		- git tag -a v<x.y.z> -m 'Version x.y.z.'
 	- cd ..
-	- close all opened .odt or .odp LibreOffice files
+	- close all opened .odp LibreOffice files
 	- sh emaj/tools/create_version_complete.sh 'x.y.z'
 	- cd emaj-x.y.z
 		- tools/regress.sh : for all functions
